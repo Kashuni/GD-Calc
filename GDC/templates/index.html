@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GD Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- styles -->
+    <link href="{{ url_for('static',filename='style.css') }}" rel="stylesheet" type="text/css">
+
+</head>
+<body class="login-bg" style="background-image: url({{ url_for('static',filename='genetic.jpg') }})" >
+
+    <div >
+
+            <h1 style="font-size: 70px; text-align:center; padding: 50px; color: white;"><b>Genetic Distance Calculator</b></h1>
+
+    </div>
+    <div class="row">
+
+
+        <div class="col-md-3">
+
+        </div>
+
+
+
+        <div class="col-md-6">
+
+            <div class="box" style="background: rgba(0, 0, 0, 0.5);">
+                <div class="content-wrap">
+                    <h4 style="color: white" >Log In</h4>
+                    <form action="/dashboard" method="get">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="username" placeholder="username">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password" name="password" placeholder="password">
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <button class="btn btn-lg btn-primary btn-block">Login</button>
+                                </div>
+                                <div class="col-md-8">
+                                    <a href="{{ url_for('register') }}"><h5 style="color: white">Don't have an account</h5></a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>
+

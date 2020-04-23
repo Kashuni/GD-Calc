@@ -1,0 +1,22 @@
+.login-bg {
+    text-align: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;"
+}
+
+.box {
+    border: 15px;
+    padding: 20px;
+    margin: 20px;
+}
+
+h5 {
+    color: white;
+}
+
+.content-box {
+    border: 15px;
+    padding: 20px;
+    margin: 20px;
+}

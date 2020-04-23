@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartSol SMS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <h1><a href="index.html">GD Calc.</a></h1>
+                    </div>
+                </div>
+                <div class="col-md-5">
+
+                            <div class="input-group form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                 <button class="btn " type="button">Search</button>
+                               </span>
+                            </div>
+
+                </div>
+                <div class="col-md-2">
+                    <div class="navbar navbar-inverse" role="banner">
+                        <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=currentUser.username%> <b class="caret"></b></a>
+                                    <ul class="dropdown-menu animated fadeInUp">
+                                        <li><a href="profile.html"><i class="far fa-user" style="font-size:24px;"></i>Profile</a></li>
+                                        <li><a href="logout">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="page-content">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="sidebar content-box" style="display: block;">
+    <ul class="nav">
+        <!-- Main menu -->
+        <li><a href="/stats"><i class="glyphicon glyphicon-stats"></i> Courses </a></li>
+        <li><a href="/teachers/markattendance"><i class="glyphicon glyphicon-stats"></i> Mark Attendence </a></li>
+        <li><a href="/leave"><i class="glyphicon glyphicon-list"></i> Assignment</a></li>
+        <li><a href="/timetable"><i class="fas fa-calendar-times"></i> Time table</a></li>
+        <li class="submenu">
+            <a href="#">
+                <i class="fas fa-users"></i> Notice
+                <span class="caret pull-right"></span>
+            </a>
+            <!-- Sub menu -->
+            <ul>
+                <li><a href="/users/new">View Notice</a></li>
+                <li><a href="/users">Add Notice</a></li>
+            </ul>
+        </li>
+
+        <li class="submenu">
+            <a href="#">
+                <i class="fas fa-calendar-times"></i> Leave Application
+                <span class="caret pull-right"></span>
+            </a>
+            <!-- Sub menu -->
+            <ul>
+                <li><a href="/teachers/leaveapplication/new">New Application</a></li>
+                <li><a href="/teachers/leaveapplication">View Application</a></li>
+            </ul>
+        </li>
+
+        <li class="submenu">
+            <a href="#">
+                <i class="fas fa-calendar-times"></i> Assignments
+                <span class="caret pull-right"></span>
+            </a>
+            <!-- Sub menu -->
+            <ul>
+                <li><a href="/teachers/assignments/add">Add Assignment</a></li>
+                <li><a href="/teachers/assignments">View Assignment</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</div>
+        </div>
+        <div class="col-md-10">
+            <div class="content-box-large">
+                <div class="panel-heading">
+                    <div class="panel-title">Upload course materials</div>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" action="/subjects/courseMaterials/upload" method="POST" encType="multipart/form-data">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Week</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="Week" name="week">
+                            </div>
+                        </div>
+                        <label class="col-md-2 control-label">File input</label>
+                        <div class="col-md-10">
+                            <input type="file"  name="sampleFile">
+                            <p class="help-block">
+                                some help text here.
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="content-box-large">
+                <div class="panel-heading">
+                    <div class="panel-title">Add Assignments</div>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" action="/teachers/assignment" id="leaveForm" onsubmit="return validateForm()" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Name</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" type="text" id="name" name="name" placeholder="Name" required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="select-1">Grade</label>
+                            <div class="col-md-10">
+
+                                <select class="form-control" id="select-1" name="grade">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="select-1">Class</label>
+                            <div class="col-md-10">
+
+                                <select class="form-control" id="select-1" name="class">
+                                    <option>A</option>
+                                    <option>B</option>
+                                    <option>C</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="select-1">Subject</label>
+                            <div class="col-md-10">
+
+                                <select class="form-control" id="select-1" name="subject">
+                                    <option>Sinhala</option>
+                                    <option>Buddhism</option>
+                                    <option>Science</option>
+                                    <option>Maths</option>
+                                    <option>English</option>
+                                    <option>History</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Description</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" placeholder="Description" rows="3" name="description" id="description" required></textarea>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+
+        <div class="copy text-center">
+            Copyright SmartSOl <a href='#'>SMS</a>
+        </div>
+
+    </div>
+</footer>
+
+
+
+</body>
+</html>
